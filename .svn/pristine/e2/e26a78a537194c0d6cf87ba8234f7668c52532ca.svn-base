@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="vertical" 
+    android:layout_width="fill_parent" 
+    android:layout_height="fill_parent"
+   xmlns:android="http://schemas.android.com/apk/res/android"
+   android:background="@color/light_gray">
+   
+ <TextView android:id="@+id/news_title"
+  android:layout_width="match_parent" android:layout_height="wrap_content"
+  android:background="@color/pink" android:textColor="@android:color/black"
+  android:textSize="20dip" android:paddingTop="10dip"
+  android:paddingBottom="10dip" android:paddingLeft="5dip" android:text="@string/news_title" />
+    
+    <ScrollView android:id="@+id/newslist_scroller" 
+        android:layout_width="fill_parent" 
+        android:layout_height="fill_parent" 
+        android:layout_below="@id/news_title">
+        
+        <RelativeLayout android:padding="10.0dip" 
+            android:layout_width="fill_parent" 
+            android:layout_height="fill_parent"
+          xmlns:android="http://schemas.android.com/apk/res/android">
+          <TextView android:textSize="16.0dip" 
+                android:textStyle="bold" 
+                android:textColor="#ff000000" 
+                android:id="@+id/news_detail_title" 
+                android:layout_width="fill_parent" 
+                android:layout_height="wrap_content" 
+                android:layout_marginBottom="10.0dip" />
+            
+            <TextView android:textColor="#ff999999" 
+                android:id="@+id/news_detail_time" 
+                android:layout_width="fill_parent" 
+                android:layout_height="wrap_content" 
+                android:layout_marginBottom="10.0dip" 
+                android:layout_below="@id/news_detail_title" />
+            
+            <View android:id="@+id/divide_line" 
+                android:layout_below="@id/news_detail_time" 
+                style="@style/line1" />
+           <TextView android:textSize="16.0dip" 
+                android:textColor="#ff000000" 
+                android:autoLink="all" 
+                android:id="@+id/news_detail_content" 
+                android:layout_width="fill_parent" 
+                android:layout_height="fill_parent" 
+                android:layout_marginTop="10.0dip" 
+                android:layout_marginBottom="10.0dip" 
+                android:layout_below="@id/divide_line" />
+        </RelativeLayout>
+    </ScrollView>
+    
+</RelativeLayout>

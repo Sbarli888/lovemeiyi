@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<dimen name="big_font_size">21dip</dimen>
+    <dimen name="middle_font_size">14dip</dimen>
+    <dimen name="little_font_size">11dip</dimen>
+    <dimen name="divider_height">10dip</dimen>
+    <dimen name="margin_horizontal_forty">40dip</dimen>
+    <dimen name="margin_horizontal_ten">10dip</dimen>
+    <dimen name="margin_vertical_ten">10dip</dimen>
+</resources>

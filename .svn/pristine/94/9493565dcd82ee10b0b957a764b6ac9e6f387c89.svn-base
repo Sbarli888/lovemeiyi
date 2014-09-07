@@ -1,0 +1,17 @@
+package com.hust.iprai;
+
+public class LoadInfo {
+
+    public int mFileSize; // 要下载的文件大小
+
+    public int mCompleteSize; // 以下载完成的大小
+
+    public String mUrl; // 文件的URL
+
+    public LoadInfo(int mFileSize, int mCompleteSize, String mUrl) {
+        super();
+        this.mFileSize = mFileSize;
+        this.mCompleteSize = mCompleteSize;
+        this.mUrl = mUrl;
+    }
+}

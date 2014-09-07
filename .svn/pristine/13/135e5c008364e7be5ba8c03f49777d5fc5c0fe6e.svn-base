@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent" android:layout_height="fill_parent"
+	android:orientation="vertical">
+
+	<FrameLayout android:id="@+id/goods_detail_layout_title"
+		android:layout_width="fill_parent" android:layout_height="45dip"
+		android:background="@color/pink">
+
+		<ImageView android:id="@+id/goods_detail_back_btn"
+			android:layout_width="wrap_content" android:layout_height="wrap_content"
+			android:layout_marginLeft="10dip" android:background="@drawable/goods_detail_back_btn_selector"
+			android:paddingLeft="10dip" android:layout_gravity="left|center_vertical" />
+		<TextView android:id="@+id/goods_detail_title"
+			android:layout_height="wrap_content" android:layout_width="wrap_content"
+			android:textColor="@color/black" android:textSize="20dip"
+			android:text="@string/goods_detail_title" android:singleLine="true"
+			android:layout_gravity="center" />
+
+	</FrameLayout>
+
+
+	<ProgressBar android:id="@+id/goods_detail_progressbar"
+		android:layout_width="fill_parent" android:layout_height="3dip"
+		android:max="100" android:progress="3"
+		style="@android:style/Widget.ProgressBar.Horizontal"
+		android:layout_below="@id/goods_detail_layout_title" />
+
+	<WebView android:id="@+id/goods_detail_webview_content"
+		android:layout_width="fill_parent" android:layout_height="match_parent"
+		android:layout_below="@id/goods_detail_progressbar" />
+
+</RelativeLayout>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical" >
+
+    <TextView android:id="@+id/second_category_text_view"
+  	android:layout_width="match_parent"
+  	android:layout_height="wrap_content"
+  	android:background="@color/pink"
+  	android:textColor="@android:color/black"
+    android:textSize="20dip"
+    android:paddingTop="10dip"
+    android:paddingBottom="10dip"
+    android:paddingLeft="5dip"
+    android:text="@string/more_aboutus" />
+        
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/aboutus_bg"
+        android:gravity="center_horizontal"
+        android:orientation="vertical" >
+
+    	<TextView android:layout_width="wrap_content"
+  		android:layout_height="wrap_content"
+  		android:background="@drawable/shop_logo"
+  		android:layout_gravity="center|top"
+  		android:layout_marginTop="80dip"
+  		 />
+    	
+    	<TextView
+    	    android:layout_width="wrap_content"
+    	    android:layout_height="wrap_content"
+    	    android:layout_gravity="center"
+    	    android:layout_marginTop="160dip"
+    	    android:text="@string/copyright_en"
+    	    android:textColor="@color/black" />
+    	
+    	<TextView
+    	    android:layout_width="wrap_content"
+    	    android:layout_height="wrap_content"
+    	    android:layout_gravity="center"
+    	    android:text="@string/copyright_cn"
+    	    android:textColor="@color/black" />
+
+    </LinearLayout>
+</LinearLayout>

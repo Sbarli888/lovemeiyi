@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:gravity="bottom|center|top"
+    android:orientation="vertical" >
+
+    <TextView
+  	android:layout_width="match_parent"
+  	android:layout_height="wrap_content"
+  	android:background="@color/pink"
+  	android:textColor="@android:color/black"
+    android:textSize="20dip"
+    android:paddingTop="10dip"
+    android:paddingBottom="10dip"
+    android:paddingLeft="5dip"
+    android:text="@string/login_title" />
+    
+	<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	    android:layout_width="match_parent"
+	    android:layout_height="match_parent" >
+	
+	    <TableRow android:layout_marginTop="20dip"> 
+		<TextView
+	  	android:layout_width="wrap_content"
+	  	android:layout_height="wrap_content"
+	  	android:text="@string/login_username"
+	  	android:textColor="@android:color/black"
+	  	android:paddingLeft="20dip"
+
+	    />
+	    
+		<EditText   
+	    android:id="@+id/input_username"      
+	    android:layout_width="match_parent"     
+	    android:layout_height="wrap_content"     
+		android:hint="@string/login_username_tips"
+		android:width="220dip"
+		android:maxLines="1"
+		/>  
+		</TableRow>
+		
+	    <TableRow android:layout_marginTop="20dip"> 
+		<TextView
+	  	android:layout_width="wrap_content"
+	  	android:layout_height="wrap_content"
+	  	android:text="@string/login_passwords"
+	  	android:textColor="@android:color/black"
+	  	android:paddingLeft="20dip"
+	    />
+		
+		<EditText   
+	    android:id="@+id/input_passwords"      
+	    android:layout_width="fill_parent"     
+	    android:layout_height="wrap_content"     
+		android:hint="@string/login_passwords_tips"
+		android:maxLines="1"
+		/>
+		</TableRow>
+
+		<CheckBox
+		    android:id="@+id/cookie_flag"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:checked="true"
+		    android:hint="@string/login_save_cookie"
+		    android:layout_marginLeft="75dip"
+			/>
+	
+	   <LinearLayout 
+	       android:paddingLeft="20dip">
+	   <Button android:id="@+id/btn_login" 
+	      android:layout_width="wrap_content"
+	      android:layout_height="wrap_content"
+	      android:text="@string/login"
+	      android:width="130dip"
+	      />
+	   
+	  	<Button android:id="@+id/btn_register" 
+	  	  android:layout_marginLeft="10dip"
+	      android:layout_width="wrap_content"
+	      android:layout_height="wrap_content"
+	      android:text="@string/register"
+	      android:width="130dip"
+	      />
+	  	</LinearLayout>
+	</TableLayout>
+
+
+
+</LinearLayout>

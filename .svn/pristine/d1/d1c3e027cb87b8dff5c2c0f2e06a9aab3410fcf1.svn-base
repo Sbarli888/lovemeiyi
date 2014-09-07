@@ -1,0 +1,27 @@
+package com.hust.iprai;
+
+public class DownloadInfo {
+
+    public int mThreadId; // 下载的线程ID
+
+    public int mStartPos; // 开始点的偏移量
+
+    public int mEndPos; // 结束点的偏移量
+
+    public int mCompleteSize; // 已经下载的大小
+    
+    public int mFileSize;  // 要下载的文件大小
+
+    public String mUrl; // 下载的文件URL
+
+    public DownloadInfo(int mThreadId, int mStartPos, int mEndPos,
+            int mCompleteSize, int mFileSize, String mUrl) {
+        this.mThreadId = mThreadId;
+        this.mStartPos = mStartPos;
+        this.mEndPos = mEndPos;
+        this.mCompleteSize = mCompleteSize;
+        this.mFileSize = mFileSize;
+        this.mUrl = mUrl;
+    }
+
+}

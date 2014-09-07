@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="hello">Hello World, ShoppingMallActivity!</string>
+    <string name="app_name">爱美衣</string>
+    <string name="shop_name">爱美衣商城(测试版)</string>
+    <string name="home">"首页"</string>
+    <string name="category">"分类"</string>
+    <string name="car">"购物车"</string>
+    <string name="account">"我的账户"</string>
+    <string name="more">"更多"</string>
+    <string name="tab_category">"全部分类"</string>
+    <string name="loading">"加载中..."</string>
+    <string name="price">"商品价格"</string>
+    <string name="upload_time">"上架时间"</string>
+    <string name="update_time">"更新时间"</string>
+    <string name="buy_it_now_text">"立即购买"</string>
+    <string name="share_weibo_text">"分享到微博"</string>
+    <string name="check_details">"查看详情"</string>
+    <string name="contact_info">"客服联系方式"</string>
+    <string name="phone_number">"联系电话"</string>
+    <string name="qq_number">"QQ"</string>
+    <string name="write_comments">"我要写评论"</string>
+    <string name="check_comments">"查看他人评论"</string>
+    <string name="market_price">"市场价格："</string>
+    <string name="shop_price">"店铺价格："</string>
+    <string name="leftover">"库存量："</string>
+    <string name="price_unit">" 元"</string>
+    <string name="crlf">"\n"</string>
+    <string name="Series">"系列"</string>
+    <string name="back_home">"去逛逛"</string>
+    <string name="car_empty_tips">"购物车还是空的，快去逛逛吧~!"</string>
+    <string name="login_title">"登录商城"</string>
+    <string name="login_username">"用户名："</string>
+    <string name="login_username_tips">"请输入用户名"</string>
+    <string name="login_passwords">"密码："</string>
+    <string name="login_passwords_tips">"请输入密码"</string>
+    <string name="login_save_cookie">"记住我"</string>
+    <string name="login">"登录"</string>
+    <string name="register">"注册"</string>
+    <string name="more_aboutus">"关于"</string>
+    <string name="copyright_en">"Copyright©2012 LoveMeiYi.com"</string>
+    <string name="copyright_cn">"爱美衣商城 版权所有"</string>
+    <string name="user_suggestion">"意见反馈"</string>
+    <string name="pg_new_feedback_type">反馈类型：</string>
+    <string name="pg_new_feedback_content">反馈内容：</string>
+    <string name="pg_new_feedback_type_text_hint">请选择</string>
+    <string name="pg_new_feedback_hint">请输入您的反馈意见（300字以内）</string>
+    <string name="pg_new_feedback_error">反馈意见不能为空，请输入</string>
+    <string name="pg_new_feedback_type_error">反馈意见不能为空，请选择</string>
+    <string name="pg_new_feedback_submit_faill">提交失败，请重试</string>
+    <string name="pg_new_feedback_submit_success">提交成功，感谢你的反馈</string>
+    <string name="pg_new_feedback_name">您的姓名（选填）</string>
+    <string name="pg_new_feedback_name_hint">您的称呼或者京东ID</string>
+    <string name="pg_new_feedback_contact">联系方式：</string>
+    <string name="pg_new_feedback_contact_hint">您的姓名、手机号、邮箱等</string>
+    <string name="new_buy_ask">提交</string>
+    <string name="pg_new_feedback_content_hint">请反馈用户体验、程序bug、支付、物流、商品等方面的意见与建议，以便我们为你提供更优质的服务！</string>
+    <string name="logout_tips">"温馨提示"</string>
+    <string name="logout_content">"确定要离开爱美衣吗？"</string>
+    <string name="ok">"确定"</string>
+   	<string name="cancel">"取消"</string>
+   	<string name="network_service">"网络服务"</string>
+   	<string name="network_unavailable_desc">"没有可用的网络服务，请开启移动网络或者打开WIFI连接"</string>
+   	<string name="network_service_back">"网络连接失败，请检查网络设置或者点击返回键退出！"</string>
+    <string name="more_exit">"退出"</string>
+    <string name="more_version">"检测更新"</string>
+    <string name="more_about">"关于"</string>
+    <string name="more_feedback">"意见反馈"</string>
+    <string name="more_help">"帮助"</string>
+    <string name="more_setting">"设置"</string>
+    <string name="more_history">"浏览历史"</string>
+    <string name="more_search">"搜索"</string>
+    <string name="search_voice">"语音购"</string>
+    <string name="search_shake">"选美衣摇一摇"</string>
+    <string name="shake_goods_tips">"亲，摇晃你的手机吧"</string>
+    <string name="shake_loading">"正在为你挑选美衣..."</string>
+    <string name="shaked_phone_tips">"喜欢吗？继续摇一摇换一件美衣吧!"</string>    
+    
+    <string name="search_hint_goods">"连衣裙"</string>
+    <string name="goods_basic_info">"商品基本信息"</string>
+    
+    <string name="shake_setting_title">"摇一摇功能设置"</string>
+    <string name="shake_type">"请选择效果"</string>
+    <string name="shake_type_selected1">"开启“震动+声音”"</string>
+    <string name="shake_type_selected2">"仅开启“震动”"</string>
+    <string name="shake_type_selected3">"仅开启“声音”"</string>
+    <string name="shake_type_selected4">"无特效"</string>
+    
+	<string name="exit">退出</string> 
+    
+    <string name="voice_search_title">语音识别</string> 
+	<string name="voice_search_please_choose">您是不是要找：</string> 
+	<string name="voice_search_message_hint">您的手机暂不支持语音搜索功能，点击确定下载安装最新的Google语音搜索软件，您也可以在各应用商店搜索“语音搜索”进行下载安装。</string> 
+    
+	
+	<string name="news_title">新闻详情</string> 
+	<string name="news_list_title">新闻列表</string> 
+	<string name="goods_detail_title">商品详情</string> 
+</resources>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

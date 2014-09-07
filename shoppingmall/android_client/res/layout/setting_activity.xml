@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/light_gray"
+    >
+    
+   	<TextView android:id="@+id/shake_setting_title"
+    android:layout_width="fill_parent"
+	android:layout_height="20dip"
+	android:text="@string/shake_setting_title"
+	android:background="@color/setting_item_bg"
+	android:paddingLeft="5dip"
+	android:textSize="16dip"
+    />  
+    
+    <RelativeLayout android:id="@+id/shake_setting_item"
+        android:layout_width="fill_parent"
+    	android:layout_height="60dip"
+    	android:background="@drawable/setting_item_selector" >
+    	    
+		<TextView android:id="@+id/shake_type"
+		    android:layout_width="wrap_content"
+	   		android:layout_height="wrap_content"
+	   		android:text="@string/shake_type"
+	   		android:paddingTop="8dip"
+	   		android:paddingLeft="10dip"
+	   		android:textSize="20dip"
+	   		android:textColor="@color/black"
+	   		android:layout_below="@id/shake_setting_title" />
+		
+		<TextView android:id="@+id/shake_type_selected"
+		    android:layout_width="wrap_content"
+	   		android:layout_height="wrap_content"
+	   		android:text="@string/shake_type_selected1"
+	   		android:paddingTop="2dip"
+	   		android:paddingLeft="10dip"
+	   		android:textSize="14dip"
+	   		android:textColor="@color/setting_item_bg"
+	   		android:layout_below="@id/shake_type" />
+
+		<ImageView
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:layout_alignParentRight="true"
+		    android:layout_centerVertical="true"
+		    android:layout_marginRight="16dp"
+		    android:src="@drawable/shake_type_icon" />
+   	    
+    </RelativeLayout>
+    
+    
+
+</LinearLayout>

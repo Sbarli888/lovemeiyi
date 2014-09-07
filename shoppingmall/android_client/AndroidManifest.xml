@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+	package="com.huawei.ptn" android:versionCode="1" android:versionName="1.1.8">
+	<uses-sdk android:minSdkVersion="8" />
+	<uses-permission android:name="android.permission.INTERNET" />
+	<uses-permission android:name="android.permission.CHANGE_CONFIGURATION" />
+	<uses-permission android:name="android.permission.CALL_PHONE" />
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+	<uses-permission android:name="android.permission.HARDWARE_TEST" />
+	<uses-permission android:name="android.permission.VIBRATE" />
+
+	<application android:icon="@drawable/ic_launcher"
+		android:label="@string/app_name" android:name=".MyApplication"
+		android:debuggable="true">
+		<activity android:name=".WelcomeActivity" android:label="@string/app_name"
+			android:screenOrientation="portrait">
+			<intent-filter>
+				<action android:name="android.intent.action.MAIN" />
+				<category android:name="android.intent.category.LAUNCHER" />
+			</intent-filter>
+		</activity>
+
+		<activity android:name=".MainActivity" 
+		    android:configChanges="orientation|keyboardHidden"
+			android:launchMode="singleTask"
+			android:windowSoftInputMode="adjustPan"
+			android:screenOrientation="portrait">
+			<intent-filter>
+				<action android:name="android.intent.action.MAIN" />
+			</intent-filter>
+		</activity>
+		
+		<activity android:name=".NewerGuideActivity"
+			android:screenOrientation="portrait" />
+
+		<activity android:name=".activity.TabHostActivity"
+			android:label="@string/tab_category" />
+
+		<activity android:name=".activity.HomeActivityGroup" />
+		<activity android:name=".activity.home.HomeActivity" />
+		<activity android:name=".activity.home.SearchActivity" />
+		<activity android:name=".activity.home.shakeActivity" />
+		<activity android:name=".activity.home.Voice_test_activity" />
+		<activity android:name=".activity.home.NewsListActivity" />
+		<activity android:name=".activity.home.NewsDetailActivity" />
+		
+		<activity android:name=".activity.CategoryActivityGroup" />
+		<activity android:name=".activity.category.FirstCategoryActivity" />
+		<activity android:name=".activity.category.SecondCategoryActivity" />
+		<activity android:name=".activity.category.ImageList" />
+		<activity android:name=".activity.category.BasicInfoActivity" />
+        <activity android:name=".activity.category.GoodsDetailActivity" />
+        
+		<activity android:name=".activity.AccountActivityGroup" />
+		<activity android:name=".activity.CarActivityGroup" />
+
+		<activity android:name=".activity.MoreActivityGroup" />
+		<activity android:name=".activity.more.MoreActivity" />
+		<activity android:name=".activity.more.AboutActivity" />
+		<activity android:name=".activity.more.FeedbackActivity" />
+		<activity android:name=".activity.more.SettingActivity" />
+		
+		<service android:name=".service.ImageCopyService" />
+		<service android:name=".service.UpdateService" />
+
+	</application>
+</manifest>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

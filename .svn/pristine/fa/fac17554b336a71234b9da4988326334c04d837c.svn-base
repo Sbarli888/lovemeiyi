@@ -1,0 +1,5 @@
+# nginx rewrite rule
+   RewriteEngine on
+   RewriteRule    ^$ shoppingmall/webroot/    [L]
+   RewriteRule    (.*) shoppingmall/webroot/$1 [L]
+</IfModule>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:orientation="vertical"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:background="@color/white">
+  <LinearLayout 
+  	android:id="@+id/tab_category_layout"
+  	xmlns:android="http://schemas.android.com/apk/res/android"
+  	android:orientation="vertical"
+  	android:layout_width="match_parent"
+  	android:layout_height="wrap_content"
+  	android:background="@color/red">
+  	<TextView
+    android:id="@+id/tab_category_title"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:textColor="@android:color/black"
+    android:textSize="20dip"
+    android:layout_marginTop="10dip"
+    android:layout_marginBottom="10dip"
+    android:layout_marginLeft="5dip"
+    style="@style/TextView.Middle.Black"
+    android:text="@string/tab_category" />
+  </LinearLayout>
+<!--  
+  <com.huawei.ptn.view.CornerListView android:id="@+id/category_setting_list"
+  	android:layout_width="fill_parent"
+  	android:layout_height="wrap_content"
+  	android:layout_margin="2dip"
+  	android:background="@drawable/app_list_corner_border"
+  	android:cacheColorHint="#00000000">
+  </com.huawei.ptn.view.CornerListView>
+-->
+</LinearLayout>

@@ -1,0 +1,178 @@
+user  www www;
+
+worker_processes 1;
+
+error_log  /home/wwwlogs/nginx_error.log  crit;
+
+pid        /usr/local/nginx/logs/nginx.pid;
+
+#Specifies the value for maximum file descriptors that can be opened by this process.
+worker_rlimit_nofile 51200;
+
+events
+	{
+		use epoll;
+		worker_connections 51200;
+	}
+
+http
+	{
+		include       mime.types;
+		default_type  application/octet-stream;
+
+		server_names_hash_bucket_size 128;
+		client_header_buffer_size 32k;
+		large_client_header_buffers 4 32k;
+		client_max_body_size 50m;
+
+		sendfile on;
+		tcp_nopush     on;
+
+		keepalive_timeout 60;
+
+		tcp_nodelay on;
+
+		fastcgi_connect_timeout 300;
+		fastcgi_send_timeout 300;
+		fastcgi_read_timeout 300;
+		fastcgi_buffer_size 64k;
+		fastcgi_buffers 4 64k;
+		fastcgi_busy_buffers_size 128k;
+		fastcgi_temp_file_write_size 256k;
+  
+                fastcgi_intercept_errors on; 
+
+               
+		gzip on;
+		gzip_min_length  1k;
+		gzip_buffers     4 16k;
+		gzip_http_version 1.0;
+		gzip_comp_level 2;
+		gzip_types       text/plain application/x-javascript text/css application/xml;
+		gzip_vary on;
+
+		#limit_zone  crawler  $binary_remote_addr  10m;
+
+server
+	{
+		listen       80;
+		server_name www.lovemeiyi.com;
+		index index.html index.htm index.php;
+		root  /home/wwwroot;
+    	
+		access_log  /home/wwwlogs/access.log;
+		error_log   /home/wwwlogs/nginx_error.log;
+		
+    	error_page 404 = /404.html;
+
+        rewrite "^/index\.html" /index.php last;
+        rewrite "^/category$" /index.php last;
+        rewrite "^/feed-c([0-9]+)\.xml$" /feed.php?cat=$1 last;
+        rewrite "^/feed-b([0-9]+)\.xml$" /feed.php?brand=$1 last;
+        rewrite "^/feed\.xml$" /feed.php last;
+        rewrite "^/category-([0-9]+)-b([0-9]+)-min([0-9]+)-max([0-9]+)-attr([^-]*)-([0-9]+)-(.+)-([a-zA-Z]+)(.*)\.html$" /category.php?id=$1&brand=$2&price_min=$3&price_max=$4&filter_attr=$5&page=$6&sort=$7&order=$8 last;
+        rewrite "^/category-([0-9]+)-b([0-9]+)-min([0-9]+)-max([0-9]+)-attr([^-]*)(.*)\.html$" /category.php?id=$1&brand=$2&price_min=$3&price_max=$4&filter_attr=$5 last;
+        rewrite "^/category-([0-9]+)-b([0-9]+)-([0-9]+)-(.+)-([a-zA-Z]+)(.*)\.html$" /category.php?id=$1&brand=$2&page=$3&sort=$4&order=$5 last;
+        rewrite "^/category-([0-9]+)-b([0-9]+)-([0-9]+)(.*)\.html$" /category.php?id=$1&brand=$2&page=$3 last;
+        rewrite "^/category-([0-9]+)-b([0-9]+)(.*)\.html$" /category.php?id=$1&brand=$2 last;
+        rewrite "^/category-([0-9]+)(.*)\.html$" /category.php?id=$1 last;
+        rewrite "^/goods-([0-9]+)(.*)\.html" /goods.php?id=$1 last;
+        rewrite "^/article_cat-([0-9]+)-([0-9]+)-(.+)-([a-zA-Z]+)(.*)\.html$" /article_cat.php?id=$1&page=$2&sort=$3&order=$4 last;
+        rewrite "^/article_cat-([0-9]+)-([0-9]+)(.*)\.html$" /article_cat.php?id=$1&page=$2 last;
+        rewrite "^/article_cat-([0-9]+)(.*)\.html$" /article_cat.php?id=$1 last;
+        rewrite "^/article-([0-9]+)(.*)\.html$" /article.php?id=$1 last;
+        rewrite "^/brand-([0-9]+)-c([0-9]+)-([0-9]+)-(.+)-([a-zA-Z]+)\.html" /brand.php?id=$1&cat=$2&page=$3&sort=$4&order=$5 last;
+        rewrite "^/brand-([0-9]+)-c([0-9]+)-([0-9]+)(.*)\.html" /brand.php?id=$1&cat=$2&page=$3 last;
+        rewrite "^/brand-([0-9]+)-c([0-9]+)(.*)\.html" /brand.php?id=$1&cat=$2 last;
+        rewrite "^/brand-([0-9]+)(.*)\.html" /brand.php?id=$1 last;
+        rewrite "^/tag-(.*)\.html" /search.php?keywords=$1 last;
+        rewrite "^/snatch-([0-9]+)\.html$" /snatch.php?id=$1 last;
+        rewrite "^/group_buy-([0-9]+)\.html$" /group_buy.php?act=view&id=$1 last;
+        rewrite "^/auction-([0-9]+)\.html$" /auction.php?act=view&id=$1 last;
+        rewrite "^/exchange-id([0-9]+)(.*)\.html$" /exchange.php?id=$1&act=view last;
+        rewrite "^/exchange-([0-9]+)-min([0-9]+)-max([0-9]+)-([0-9]+)-(.+)-([a-zA-Z]+)(.*)\.html$" /exchange.php?cat_id=$1&integral_min=$2&integral_max=$3&page=$4&sort=$5&order=$6 last;
+        rewrite "^/exchange-([0-9]+)-([0-9]+)-(.+)-([a-zA-Z]+)(.*)\.html$" /exchange.php?cat_id=$1&page=$2&sort=$3&order=$4 last;
+        rewrite "^/exchange-([0-9]+)-([0-9]+)(.*)\.html$" /exchange.php?cat_id=$1&page=$2 last;
+        rewrite "^/exchange-([0-9]+)(.*)\.html$" /exchange.php?cat_id=$1 last;
+
+		location ~ .*\.(php|php5)?$
+			{
+				fastcgi_pass  unix:/tmp/php-cgi.sock;
+				fastcgi_index index.php;
+				include fcgi.conf;
+			}
+
+		location /status {
+			stub_status on;
+			access_log   off;
+		}
+
+		location ~ .*\.(gif|jpg|jpeg|png|bmp|swf)$
+			{
+				expires      30d;
+			}
+
+		location ~ .*\.(js|css)?$
+			{
+				expires      12h;
+			}
+
+		log_format  access  '$remote_addr - $remote_user [$time_local] "$request" '
+             '$status $body_bytes_sent "$http_referer" '
+             '"$http_user_agent" $http_x_forwarded_for';
+             
+
+	}
+	
+server 
+	{
+	    listen      80;
+	    server_name m.lovemeiyi.com;
+	    access_log  /home/wwwlogs/android_access.log;
+	    error_log   /home/wwwlogs/android_nginx_error.log;
+	    rewrite_log on;
+	    root        /home/wwwroot/android/shoppingmall/webroot;
+	    index       index.php index.html index.htm;
+	 
+	    # Not found this on disk? 
+	    # Feed to CakePHP for further processing!
+	    if (!-e $request_filename) {
+	        rewrite ^/(.+)$ /index.php?url=$1 last;
+	        break;
+	    }
+	 
+	    # Pass the PHP scripts to FastCGI server
+	    # listening on 127.0.0.1:9000
+	    location ~ \.php$ {
+	        # fastcgi_pass   unix:/tmp/php-fastcgi.sock;
+	        fastcgi_pass   unix:/tmp/php-cgi.sock;
+	        fastcgi_index  index.php;
+	        fastcgi_intercept_errors on; # to support 404s for PHP files not found
+	        fastcgi_param  SCRIPT_FILENAME /home/wwwroot/android/$fastcgi_script_name;
+	        include        fastcgi_params;
+	    }
+	    
+	    # Static files.
+	    # Set expire headers, Turn off access log
+	    location ~* \favicon.ico$ {
+	        access_log off;
+	        expires 1d;
+	        add_header Cache-Control public;
+	    }
+	    location ~ ^/(img|cjs|ccss)/ {
+	        access_log off;
+	        expires 7d;
+	        add_header Cache-Control public;
+	    }
+	 
+	    # Deny access to .htaccess files,
+	    # git & svn repositories, etc
+	    location ~ /(\.ht|\.git|\.svn) {
+	        deny  all;
+	    }
+	}
+
+	
+include vhost/*.conf;
+}
+

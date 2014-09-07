@@ -1,0 +1,32 @@
+package com.hust.iprai;
+
+import android.content.Context;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteOpenHelper;
+
+public class MyDBHelper extends SQLiteOpenHelper {
+
+    // 数据库名和数据库版本号可根据实际情况自定义
+    private static final String DOWNLOAD_DB = "download.db";
+
+    private static final int DB_VERSION = 1;
+
+    // 创建数据库表，名字为download_info
+    private static final String DOWNLOAD_INFO_TABLE = "create table if not exists download_info(_id integer PRIMARY KEY AUTOINCREMENT, thread_id integer, start_pos integer, end_pos integer, complete_size integer, file_size integer, url char)";
+
+    public MyDBHelper(Context context) {
+        super(context, DOWNLOAD_DB, null, DB_VERSION);
+    }
+
+    @Override
+    public void onCreate(SQLiteDatabase db) {
+        // 创建数据库表download_info
+        db.execSQL(DOWNLOAD_INFO_TABLE);
+    }
+
+    @Override
+    public void onUpgrade(SQLiteDatabase arg0, int arg1, int arg2) {
+        // 数据库版本号升级时，必须在这里添加相应的代码
+    }
+
+}
